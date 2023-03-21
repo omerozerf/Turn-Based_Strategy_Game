@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="815c1873-85e9-4457-b191-934b287c8798" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/MouseWorld.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/MouseWorld.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Materials/MouseVisual.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Materials/MouseVisual.mat.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Turn-Based_Strategy_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Turn-Based_Strategy_Game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/MouseWorld.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/MouseWorld.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +36,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "CSharpTypeNameHintsOptions",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -91,7 +95,7 @@
       <updated>1679397493016</updated>
       <workItem from="1679397497154" duration="2295000" />
       <workItem from="1679400329465" duration="28000" />
-      <workItem from="1679400383032" duration="3302000" />
+      <workItem from="1679400383032" duration="7521000" />
     </task>
     <servers />
   </component>
