@@ -15,14 +15,6 @@ namespace _Scripts
         {
             Instance = this;
         }
-
-
-        private void Update()
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); 
-            Debug.Log(Physics.Raycast(ray,out RaycastHit raycastHit, float.MaxValue, mousePlaneLayerMask));
-            transform.position = raycastHit.point;
-        }
         
         
         public static Vector3 GetPosition()
