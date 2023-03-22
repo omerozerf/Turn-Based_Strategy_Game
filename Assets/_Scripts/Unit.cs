@@ -5,6 +5,8 @@ namespace _Scripts.test
 {
     public class Unit : MonoBehaviour
     {
+        [SerializeField] private Animator unitAnimator;
+        
         private Vector3 targetPosition;
 
 
@@ -16,6 +18,14 @@ namespace _Scripts.test
                 Vector3 moveDirection = (targetPosition - transform.position).normalized;
                 float moveSpeed = 4f;
                 transform.position += moveDirection * (Time.deltaTime * moveSpeed);
+                
+                unitAnimator.SetBool("IsWalking", true);
+
+            }
+            else
+            {
+                unitAnimator.SetBool("IsWalking", false);
+
             }
 
 
