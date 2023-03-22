@@ -10,6 +10,12 @@ namespace _Scripts.test
         private Vector3 targetPosition;
 
 
+        private void Awake()
+        {
+            targetPosition = this.transform.position;
+        }
+
+
         private void Update()
         {
             float stoppingDistance = .1f;
@@ -30,16 +36,10 @@ namespace _Scripts.test
                 unitAnimator.SetBool("IsWalking", false);
 
             }
-
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                Move(MouseWorld.GetPosition());
-            }
         }
 
 
-        private void Move(Vector3 targetPosition)
+        public void Move(Vector3 targetPosition)
         {
             this.targetPosition = targetPosition;
         }
