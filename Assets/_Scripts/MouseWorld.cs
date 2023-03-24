@@ -14,7 +14,7 @@ namespace _Scripts
         private void Awake()
         {
             Instance = this;
-        }
+        } 
         
         
         public static Vector3 GetPosition()
