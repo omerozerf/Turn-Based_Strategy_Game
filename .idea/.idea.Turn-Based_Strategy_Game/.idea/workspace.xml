@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="815c1873-85e9-4457-b191-934b287c8798" name="Changes" comment="" />
+    <list default="true" id="815c1873-85e9-4457-b191-934b287c8798" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Turn-Based_Strategy_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Turn-Based_Strategy_Game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Prefabs/Unit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Prefabs/Unit.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/UnitActionSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/UnitActionSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,6 +15,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/MouseWorld.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/UnitSelectedVisual.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -90,6 +97,9 @@
       <workItem from="1679400383032" duration="7741000" />
       <workItem from="1679417834634" duration="64000" />
       <workItem from="1679569182385" duration="856000" />
+      <workItem from="1679646898955" duration="1192000" />
+      <workItem from="1679653885562" duration="483000" />
+      <workItem from="1679655504519" duration="2860000" />
     </task>
     <servers />
   </component>
