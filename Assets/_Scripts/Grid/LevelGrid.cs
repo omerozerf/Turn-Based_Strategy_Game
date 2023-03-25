@@ -50,6 +50,14 @@ namespace _Scripts.Grid
         }
 
 
+        public void UnitMovedGridPosition(Unit.Unit unit, GridPosition fromGridPosition, GridPosition toGridPosition)
+        {
+            ClearUnitAtGridPosition(fromGridPosition);
+            
+            SetUnitAtGridPosition(toGridPosition, unit);
+        }
+
+
         public GridPosition GetGridPosition(Vector3 worldPosition) => gridSystem.GetGridPosition(worldPosition);
     }
 }

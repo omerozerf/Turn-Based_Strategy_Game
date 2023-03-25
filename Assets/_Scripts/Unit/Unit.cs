@@ -9,6 +9,7 @@ namespace _Scripts.Unit
         [SerializeField] private Animator unitAnimator;
         
         private Vector3 targetPosition;
+        private GridPosition gridPosition;
 
 
         private void Awake()
@@ -19,7 +20,7 @@ namespace _Scripts.Unit
 
         private void Start()
         {
-            GridPosition gridPosition = LevelGrid.Instance.GetGridPosition(transform.position);
+            gridPosition = LevelGrid.Instance.GetGridPosition(transform.position);
             LevelGrid.Instance.SetUnitAtGridPosition(gridPosition, this);
         }
 
@@ -43,6 +44,16 @@ namespace _Scripts.Unit
             {
                 unitAnimator.SetBool("IsWalking", false);
 
+            }
+            
+            
+            GridPosition newgridPosition = LevelGrid.Instance.GetGridPosition(transform.position);
+            if (newgridPosition != gridPosition)
+            {
+                // Unit changed Grid Position
+                
+                LevelGrid.Instance.UnitMovedGridPosition(this, gridPosition, newgridPosition);
+                gridPosition = newgridPosition;
             }
         }
 
