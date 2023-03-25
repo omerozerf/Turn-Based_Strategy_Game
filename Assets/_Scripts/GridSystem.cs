@@ -7,6 +7,7 @@ namespace _Scripts
         private int width;
         private int height;
         private float cellSize;
+        private GridObject[,] gridObjectAray;
         
         
         public GridSystem(int width, int height, float cellSize)
@@ -16,11 +17,15 @@ namespace _Scripts
             this.cellSize = cellSize;
 
 
+            gridObjectAray = new GridObject[width, height];
+            
+            
             for (int x = 0; x < width; x++)
             {
                 for (int z = 0; z < height; z++)
                 {
-                    Debug.DrawLine(GetWorldPosition(x, z), GetWorldPosition(x, z) + Vector3.right * .2f, Color.white, 1000);
+                    GridPosition gridPosition = new GridPosition(x, z);
+                    gridObjectAray[x, z] = new GridObject(this, gridPosition);
                 }
             }
         }
@@ -38,6 +43,18 @@ namespace _Scripts
                 Mathf.RoundToInt(worldPosition.x / cellSize),
                 Mathf.RoundToInt(worldPosition.z / cellSize)
                 );
+        }
+
+
+        public void CreateDebugObjects(Transform debugPrefab)
+        {
+            for (int x = 0; x < width; x++)
+            {
+                for (int z = 0; z < height; z++)
+                {
+                    GameObject.Instantiate(debugPrefab, GetWorldPosition(x, z), Quaternion.identity);
+                }
+            }
         }
     }
 }
