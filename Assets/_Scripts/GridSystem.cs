@@ -4,19 +4,19 @@ namespace _Scripts
 {
     public class GridSystem
     {
-        private int widht;
+        private int width;
         private int height;
         private float cellSize;
         
         
-        public GridSystem(int widht, int height, float cellSize)
+        public GridSystem(int width, int height, float cellSize)
         {
-            this.widht = widht;
+            this.width = width;
             this.height = height;
             this.cellSize = cellSize;
 
 
-            for (int x = 0; x < widht; x++)
+            for (int x = 0; x < width; x++)
             {
                 for (int z = 0; z < height; z++)
                 {
