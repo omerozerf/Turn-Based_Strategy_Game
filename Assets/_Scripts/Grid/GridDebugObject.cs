@@ -1,19 +1,25 @@
+using System;
+using TMPro;
 using UnityEngine;
 
 namespace _Scripts.Grid
 {
     public class GridDebugObject : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
+        [SerializeField] private TextMeshPro textMeshPro;
+
+        private GridObject gridObject;
         
+
+        private void Update()
+        {
+            textMeshPro.text = gridObject.ToString();
         }
 
-        // Update is called once per frame
-        void Update()
+
+        public void SetGridObject(GridObject gridObject)
         {
-        
+            this.gridObject = gridObject;
         }
     }
 }

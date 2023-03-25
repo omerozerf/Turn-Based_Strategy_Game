@@ -31,9 +31,9 @@ namespace _Scripts.Grid
         }
 
 
-        public Vector3 GetWorldPosition(int x, int z)
+        public Vector3 GetWorldPosition(GridPosition gridPosition)
         {
-            return new Vector3(x, 0, z) * cellSize;
+            return new Vector3(gridPosition.x, 0, gridPosition.z) * cellSize;
         }
 
 
@@ -52,9 +52,19 @@ namespace _Scripts.Grid
             {
                 for (int z = 0; z < height; z++)
                 {
-                    GameObject.Instantiate(debugPrefab, GetWorldPosition(x, z), Quaternion.identity);
+                    GridPosition gridPosition = new GridPosition(x, z);
+                    
+                    Transform debugTransform = GameObject.Instantiate(debugPrefab, GetWorldPosition(gridPosition), Quaternion.identity);
+                    GridDebugObject gridDebugObject = debugTransform.GetComponent<GridDebugObject>();
+                    gridDebugObject.SetGridObject(GetGridObject(gridPosition));
                 }
             }
+        }
+
+
+        public GridObject GetGridObject(GridPosition gridPosition)
+        {
+            return gridObjectAray[gridPosition.x, gridPosition.z];
         }
     }
 }
