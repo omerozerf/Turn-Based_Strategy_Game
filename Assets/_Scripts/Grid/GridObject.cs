@@ -1,4 +1,4 @@
-namespace _Scripts
+namespace _Scripts.Grid
 {
     public class GridObject
     {

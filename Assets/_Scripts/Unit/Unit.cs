@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-namespace _Scripts.test
+namespace _Scripts.Unit
 {
     public class Unit : MonoBehaviour
     {

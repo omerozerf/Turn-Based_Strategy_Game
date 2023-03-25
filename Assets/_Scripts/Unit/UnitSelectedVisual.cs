@@ -1,12 +1,11 @@
 using System;
-using _Scripts.test;
 using UnityEngine;
 
-namespace _Scripts
+namespace _Scripts.Unit
 {
     public class UnitSelectedVisual : MonoBehaviour
     {
-        [SerializeField] private Unit unit;
+        [SerializeField] private _Scripts.Unit.Unit unit;
 
         private MeshRenderer meshRenderer;
 
