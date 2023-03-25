@@ -1,3 +1,5 @@
+using System;
+using _Scripts.Grid;
 using UnityEngine;
 
 namespace _Scripts.Unit
@@ -12,6 +14,13 @@ namespace _Scripts.Unit
         private void Awake()
         {
             targetPosition = this.transform.position;
+        }
+
+
+        private void Start()
+        {
+            GridPosition gridPosition = LevelGrid.Instance.GetGridPosition(transform.position);
+            LevelGrid.Instance.SetUnitAtGridPosition(gridPosition, this);
         }
 
 

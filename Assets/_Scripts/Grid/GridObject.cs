@@ -4,6 +4,7 @@ namespace _Scripts.Grid
     {
         private GridSystem gridSystem;
         private GridPosition gridPosition;
+        private Unit.Unit unit;
 
 
         public GridObject(GridSystem gridSystem, GridPosition gridPosition)
@@ -15,7 +16,19 @@ namespace _Scripts.Grid
 
         public override string ToString()
         {
-            return gridPosition.ToString();
+            return gridPosition.ToString() + "\n" + unit;
+        }
+
+
+        public void SetUnit(Unit.Unit unit)
+        {
+            this.unit = unit;
+        }
+
+
+        public Unit.Unit GetUnit()
+        {
+            return unit;
         }
     }
 }
