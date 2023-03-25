@@ -20,13 +20,13 @@ namespace _Scripts
             {
                 for (int z = 0; z < height; z++)
                 {
-                    Debug.DrawLine(GetWordlPosition(x, z), GetWordlPosition(x, z) + Vector3.right * .2f, Color.white, 1000);
+                    Debug.DrawLine(GetWorldPosition(x, z), GetWorldPosition(x, z) + Vector3.right * .2f, Color.white, 1000);
                 }
             }
         }
 
 
-        public Vector3 GetWordlPosition(int x, int z)
+        public Vector3 GetWorldPosition(int x, int z)
         {
             return new Vector3(x, 0, z) * cellSize;
         }
