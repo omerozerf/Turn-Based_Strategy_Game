@@ -1,34 +1,49 @@
+using System.Collections.Generic;
+
 namespace _Scripts.Grid
 {
     public class GridObject
     {
         private GridSystem gridSystem;
         private GridPosition gridPosition;
-        private Unit.Unit unit;
+        private List<Unit.Unit> unitList;
 
 
         public GridObject(GridSystem gridSystem, GridPosition gridPosition)
         {
             this.gridSystem = gridSystem;
             this.gridPosition = gridPosition;
+            unitList = new List<Unit.Unit>();
         }
 
 
         public override string ToString()
         {
-            return gridPosition.ToString() + "\n" + unit;
+            string unitString = "";
+            foreach (Unit.Unit unit in unitList)
+            {
+                unitString += unit + "\n";
+            }
+            
+            return gridPosition.ToString() + "\n" + unitString;
         }
 
 
-        public void SetUnit(Unit.Unit unit)
+        public void AddUnit(Unit.Unit unit)
         {
-            this.unit = unit;
+            unitList.Add(unit); 
         }
 
 
-        public Unit.Unit GetUnit()
+        public void RemoveUnit(Unit.Unit unit)
         {
-            return unit;
+            unitList.Remove(unit);
+        }
+
+
+        public List<Unit.Unit> GetUnitList()
+        {
+            return unitList;
         }
     }
 }

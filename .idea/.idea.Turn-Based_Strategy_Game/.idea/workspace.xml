@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="815c1873-85e9-4457-b191-934b287c8798" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Turn-Based_Strategy_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Turn-Based_Strategy_Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Grid/GridPosition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Grid/GridPosition.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Grid/GridObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Grid/GridObject.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Grid/LevelGrid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Grid/LevelGrid.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Unit/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Unit/Unit.cs" afterDir="false" />
     </list>
@@ -102,7 +102,7 @@
       <workItem from="1679653885562" duration="483000" />
       <workItem from="1679655504519" duration="9274000" />
       <workItem from="1679670778931" duration="22000" />
-      <workItem from="1679738963970" duration="10718000" />
+      <workItem from="1679738963970" duration="11419000" />
     </task>
     <servers />
   </component>

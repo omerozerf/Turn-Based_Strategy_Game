@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace _Scripts.Grid
@@ -29,32 +30,32 @@ namespace _Scripts.Grid
         }
 
 
-        public void SetUnitAtGridPosition(GridPosition gridPosition, Unit.Unit unit)
+        public void AddUnitAtGridPosition(GridPosition gridPosition, Unit.Unit unit)
         {
             GridObject gridObject = gridSystem.GetGridObject(gridPosition);
-            gridObject.SetUnit(unit);
+            gridObject.AddUnit(unit);
         }
 
 
-        public Unit.Unit GetUnitAtGridPosition(GridPosition gridPosition)
+        public List<Unit.Unit> GetUnitListAtGridPosition(GridPosition gridPosition)
         {
             GridObject gridObject = gridSystem.GetGridObject(gridPosition);
-            return gridObject.GetUnit();
+            return gridObject.GetUnitList();
         }
 
 
-        public void ClearUnitAtGridPosition(GridPosition gridPosition)
+        public void RemoveUnitAtGridPosition(GridPosition gridPosition, Unit.Unit unit)
         {
             GridObject gridObject = gridSystem.GetGridObject(gridPosition);
-            gridObject.SetUnit(null);
+            gridObject.RemoveUnit(unit);
         }
 
 
         public void UnitMovedGridPosition(Unit.Unit unit, GridPosition fromGridPosition, GridPosition toGridPosition)
         {
-            ClearUnitAtGridPosition(fromGridPosition);
+            RemoveUnitAtGridPosition(fromGridPosition, unit);
             
-            SetUnitAtGridPosition(toGridPosition, unit);
+            AddUnitAtGridPosition(toGridPosition, unit);
         }
 
 
