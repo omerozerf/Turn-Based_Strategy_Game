@@ -10,9 +10,27 @@ namespace _Scripts
 
         private const float MIN_FOLLOW_Y_OFFSET = 2f;
         private const float MAX_FOLLOW_Y_OFFSET = 12f;
-            
-        
+
+        private Vector3 targetFolloOffset;
+        private CinemachineTransposer cinemachineTransposer;
+
+
+        private void Start()
+        {
+            cinemachineTransposer = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineTransposer>();
+            targetFolloOffset = cinemachineTransposer.m_FollowOffset;
+        }
+
+
         private void Update()
+        {
+            HandleMovement();
+            HandleRotation();
+            HandleZoom();
+        }
+
+
+        private void HandleMovement()
         {
             Vector3 inputMoveDir = new Vector3(0, 0, 0);
             if (Input.GetKey(KeyCode.W))
@@ -36,8 +54,11 @@ namespace _Scripts
             
             Vector3 moveVector = transform.forward * inputMoveDir.z + transform.right * inputMoveDir.x;
             transform.position += moveVector * (moveSpeed * Time.deltaTime);
+        }
 
-            
+
+        private void HandleRotation()
+        {
             Vector3 rotationVector = new Vector3(0, 0, 0);
             if (Input.GetKey(KeyCode.Q))
             {
@@ -51,23 +72,26 @@ namespace _Scripts
             float rotationSpeed = 100f;
 
             transform.eulerAngles += rotationVector * (rotationSpeed * Time.deltaTime);
-            
-            
-            CinemachineTransposer cinemachineTransposer = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineTransposer>();
-            Vector3 followOffset = cinemachineTransposer.m_FollowOffset;
+        }
+
+
+        private void HandleZoom()
+        {
             float zoomAmount = 1f;
             
             if (Input.mouseScrollDelta.y > 0)
             {
-                followOffset.y -= zoomAmount;
+                targetFolloOffset.y -= zoomAmount;
             }
             if (Input.mouseScrollDelta.y < 0)
             {
-                followOffset.y += zoomAmount;
+                targetFolloOffset.y += zoomAmount;
             }
 
-            followOffset.y = Mathf.Clamp(followOffset.y, MIN_FOLLOW_Y_OFFSET, MAX_FOLLOW_Y_OFFSET);
-            cinemachineTransposer.m_FollowOffset = followOffset;
+            targetFolloOffset.y = Mathf.Clamp(targetFolloOffset.y, MIN_FOLLOW_Y_OFFSET, MAX_FOLLOW_Y_OFFSET);
+            float zoomSpeed = 5f;
+            cinemachineTransposer.m_FollowOffset =
+                Vector3.Lerp(cinemachineTransposer.m_FollowOffset, targetFolloOffset, Time.deltaTime * zoomSpeed);
         }
     }
 }
