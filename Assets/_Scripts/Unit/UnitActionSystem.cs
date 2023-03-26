@@ -35,7 +35,7 @@ namespace _Scripts.Unit
             {
                 if (TryHandleUnitSelection()) return;
 
-                selectedUnit.Move(MouseWorld.GetPosition());
+                selectedUnit.GetMoveAction().Move(MouseWorld.GetPosition());
             }
         }
 
