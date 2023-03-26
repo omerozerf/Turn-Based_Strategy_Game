@@ -28,7 +28,7 @@ namespace _Scripts
             HandleRotation();
             HandleZoom();
         }
-
+ 
 
         private void HandleMovement()
         {
