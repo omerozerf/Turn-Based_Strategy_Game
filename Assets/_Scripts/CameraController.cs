@@ -43,7 +43,7 @@ namespace _Scripts
 
             float rotationSpeed = 100f;
 
-            transform.eulerAngles += rotationVector * rotationSpeed * Time.deltaTime;
+            transform.eulerAngles += rotationVector * (rotationSpeed * Time.deltaTime);
         }
     }
 }
