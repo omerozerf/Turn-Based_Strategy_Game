@@ -1,10 +1,17 @@
 using System;
+using Cinemachine;
 using UnityEngine;
 
 namespace _Scripts
 {
     public class CameraController : MonoBehaviour
     {
+        [SerializeField] private CinemachineVirtualCamera cinemachineVirtualCamera;
+
+        private const float MIN_FOLLOW_Y_OFFSET = 2f;
+        private const float MAX_FOLLOW_Y_OFFSET = 12f;
+            
+        
         private void Update()
         {
             Vector3 inputMoveDir = new Vector3(0, 0, 0);
@@ -44,6 +51,23 @@ namespace _Scripts
             float rotationSpeed = 100f;
 
             transform.eulerAngles += rotationVector * (rotationSpeed * Time.deltaTime);
+            
+            
+            CinemachineTransposer cinemachineTransposer = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineTransposer>();
+            Vector3 followOffset = cinemachineTransposer.m_FollowOffset;
+            float zoomAmount = 1f;
+            
+            if (Input.mouseScrollDelta.y > 0)
+            {
+                followOffset.y -= zoomAmount;
+            }
+            if (Input.mouseScrollDelta.y < 0)
+            {
+                followOffset.y += zoomAmount;
+            }
+
+            followOffset.y = Mathf.Clamp(followOffset.y, MIN_FOLLOW_Y_OFFSET, MAX_FOLLOW_Y_OFFSET);
+            cinemachineTransposer.m_FollowOffset = followOffset;
         }
     }
 }
