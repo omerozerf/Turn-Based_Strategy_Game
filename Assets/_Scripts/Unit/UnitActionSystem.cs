@@ -1,4 +1,5 @@
 using System;
+using _Scripts.Grid;
 using UnityEngine;
 
 namespace _Scripts.Unit
@@ -35,7 +36,12 @@ namespace _Scripts.Unit
             {
                 if (TryHandleUnitSelection()) return;
 
-                selectedUnit.GetMoveAction().Move(MouseWorld.GetPosition());
+                GridPosition mouseGridPosition = LevelGrid.Instance.GetGridPosition(MouseWorld.GetPosition());
+
+                if (selectedUnit.GetMoveAction().IsValidActionGridPosition(mouseGridPosition))
+                {
+                    selectedUnit.GetMoveAction().Move(mouseGridPosition);
+                }
             }
         }
 
