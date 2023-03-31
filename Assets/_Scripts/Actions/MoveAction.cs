@@ -101,5 +101,11 @@ namespace _Scripts
             
             return validGridPositionList;
         }
+
+
+        public override string GetActionName()
+        {
+            return "Move";
+        }
     }
 }
