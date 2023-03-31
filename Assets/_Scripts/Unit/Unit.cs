@@ -8,11 +8,13 @@ namespace _Scripts.Unit
     {
         private GridPosition gridPosition;
         private MoveAction moveAction;
+        private SpinAction spinAction;
 
 
         private void Awake()
         {
             moveAction = GetComponent<MoveAction>();
+            spinAction = GetComponent<SpinAction>();
         }
 
 
@@ -39,6 +41,12 @@ namespace _Scripts.Unit
         public MoveAction GetMoveAction()
         {
             return moveAction;
+        }
+        
+        
+        public SpinAction GetSpinAction()
+        {
+            return spinAction;
         }
 
 

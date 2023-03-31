@@ -43,6 +43,11 @@ namespace _Scripts.Unit
                     selectedUnit.GetMoveAction().Move(mouseGridPosition);
                 }
             }
+
+            if (Input.GetMouseButtonDown(1))
+            {
+                selectedUnit.GetSpinAction().Spin();
+            }
         }
 
 
