@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using _Scripts.Grid;
 using UnityEngine;
@@ -39,6 +40,7 @@ namespace _Scripts
             {
                 unitAnimator.SetBool("IsWalking", false);
                 isActive = false;
+                onActionComplete();
             }
             
             
@@ -47,8 +49,9 @@ namespace _Scripts
         }
 
 
-        public void Move(GridPosition gridPosition)
+        public void Move(GridPosition gridPosition, Action onActionComplete)
         {
+            this.onActionComplete = onActionComplete;
             this.targetPosition = LevelGrid.Instance.GetWorldPosition(gridPosition);
             isActive = true;
         }
