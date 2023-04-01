@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="815c1873-85e9-4457-b191-934b287c8798" name="Changes" comment="" />
+    <list default="true" id="815c1873-85e9-4457-b191-934b287c8798" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Turn-Based_Strategy_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Turn-Based_Strategy_Game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Actions/BaseAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Actions/BaseAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Actions/MoveAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Actions/MoveAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Actions/SpinAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Actions/SpinAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Grid/GridSystemVisual.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Grid/GridSystemVisual.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Unit/UnitActionSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Unit/UnitActionSystem.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -106,6 +113,7 @@
       <workItem from="1679995684970" duration="3890000" />
       <workItem from="1680252662556" duration="12686000" />
       <workItem from="1680335688865" duration="188000" />
+      <workItem from="1680373914539" duration="1726000" />
     </task>
     <servers />
   </component>

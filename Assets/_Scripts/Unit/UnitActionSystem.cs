@@ -1,6 +1,7 @@
 using System;
 using _Scripts.Grid;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace _Scripts.Unit
 {
@@ -43,8 +44,11 @@ namespace _Scripts.Unit
             {
                 return;
             }
-            
-            
+
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                return;
+            }
             if (TryHandleUnitSelection()) return;
             
             
@@ -58,20 +62,10 @@ namespace _Scripts.Unit
             {
                 GridPosition mouseGridPosition = LevelGrid.Instance.GetGridPosition(MouseWorld.GetPosition());
 
-                
-                switch (selectedAction)
+                if (selectedAction.IsValidActionGridPosition(mouseGridPosition))
                 {
-                    case MoveAction moveAction:
-                        if (moveAction.IsValidActionGridPosition(mouseGridPosition))
-                        {
-                            SetBusy();
-                            moveAction.Move(mouseGridPosition, ClearBusy);
-                        }
-                        break;
-                    case SpinAction spinAction:
-                        SetBusy();
-                        spinAction.Spin(ClearBusy);
-                        break;
+                    SetBusy();
+                    selectedAction.TakeAction(mouseGridPosition, ClearBusy);
                 }
             }
         }
@@ -98,6 +92,11 @@ namespace _Scripts.Unit
                 {
                     if (raycastHit.transform.TryGetComponent<Unit>(out Unit unit))
                     {
+                        if (unit == selectedUnit)
+                        {
+                            // Unit is already selected
+                            return false;
+                        }
                         SetSelectedUnit(unit);
                         return true;
                     }
@@ -126,6 +125,12 @@ namespace _Scripts.Unit
         public Unit GetSelectedUnit()
         {
             return selectedUnit;
+        }
+
+
+        public BaseAction GetSelectedAction()
+        {
+            return selectedAction;
         }
     }
 }
