@@ -13,6 +13,7 @@ namespace _Scripts.Unit
         public event EventHandler OnSelectedUnitChanged;
         public event EventHandler OnSelectedActionChanged;
         public event EventHandler<bool> OnBusyChanged;
+        public event EventHandler OnActionStarted;
 
 
 
@@ -64,12 +65,20 @@ namespace _Scripts.Unit
             if (Input.GetMouseButtonDown(0))
             {
                 GridPosition mouseGridPosition = LevelGrid.Instance.GetGridPosition(MouseWorld.GetPosition());
-
-                if (selectedAction.IsValidActionGridPosition(mouseGridPosition))
+                if (!selectedAction.IsValidActionGridPosition(mouseGridPosition))
                 {
-                    SetBusy();
-                    selectedAction.TakeAction(mouseGridPosition, ClearBusy);
+                    return;    
                 }
+
+                if (!selectedUnit.TrySpendActionPointsToTakeAction(selectedAction))
+                {
+                    return;
+                }
+                
+                SetBusy();
+                selectedAction.TakeAction(mouseGridPosition, ClearBusy);
+                
+                OnActionStarted?.Invoke(this, EventArgs.Empty);
             }
         }
         
