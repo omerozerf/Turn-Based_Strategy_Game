@@ -11,6 +11,8 @@ namespace _Scripts.Unit
 
 
         public event EventHandler OnSelectedUnitChanged;
+        public event EventHandler OnSelectedActionChanged;
+
     
     
         [SerializeField] private Unit selectedUnit;
@@ -119,6 +121,7 @@ namespace _Scripts.Unit
         public void SetSelectedAction(BaseAction baseAction)
         {
             selectedAction = baseAction;
+            OnSelectedActionChanged?.Invoke(this, EventArgs.Empty);
         }
 
 
