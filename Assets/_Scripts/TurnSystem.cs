@@ -11,7 +11,7 @@ public class TurnSystem : MonoBehaviour
     public event EventHandler OnTurnChanged;
     
     
-    private int turnNumber;
+    private int turnNumber = 1;
 
 
     private void Awake()

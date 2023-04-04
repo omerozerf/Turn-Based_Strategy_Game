@@ -6,11 +6,17 @@ namespace _Scripts.Unit
 {
     public class Unit : MonoBehaviour
     {
+        public static event EventHandler OnAnyActionPointsChanged;
+        
+        
+        private const int ACTION_POINTS_MAX = 2;
+        
+        
         private GridPosition gridPosition;
         private MoveAction moveAction;
         private SpinAction spinAction;
         private BaseAction[] baseActionArray;
-        private int actionPoints = 2;
+        private int actionPoints = ACTION_POINTS_MAX;
 
 
         private void Awake()
@@ -25,6 +31,15 @@ namespace _Scripts.Unit
         {
             gridPosition = LevelGrid.Instance.GetGridPosition(transform.position);
             LevelGrid.Instance.AddUnitAtGridPosition(gridPosition, this);
+            
+            TurnSystem.Instance.OnTurnChanged += TurnSystem_OnTurnChanged;
+        }
+
+        private void TurnSystem_OnTurnChanged(object sender, EventArgs e)
+        {
+            actionPoints = ACTION_POINTS_MAX;
+            
+            OnAnyActionPointsChanged?.Invoke(this, EventArgs.Empty);
         }
 
 
@@ -89,6 +104,8 @@ namespace _Scripts.Unit
         private void SpendActionPonits(int amount)
         {
             actionPoints -= amount;
+            
+            OnAnyActionPointsChanged?.Invoke(this, EventArgs.Empty);
         }
 
 
