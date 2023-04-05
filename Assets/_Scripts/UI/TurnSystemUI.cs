@@ -24,12 +24,14 @@ public class TurnSystemUI : MonoBehaviour
         
         UpdateTurnNext();
         UpdateEnemyTurnVisual();
+        UpdateEndTurnButtonVisibility();
     }
 
     private void TurnSystem_OnTurnChanged(object sender, EventArgs e)
     {
         UpdateTurnNext();
         UpdateEnemyTurnVisual();
+        UpdateEndTurnButtonVisibility();
     }
 
 
@@ -42,5 +44,11 @@ public class TurnSystemUI : MonoBehaviour
     private void UpdateEnemyTurnVisual()
     {
         enemyTurnVisualGameObject.SetActive(!TurnSystem.Instance.IsPlayerTurn());
+    }
+
+
+    private void UpdateEndTurnButtonVisibility()
+    {
+        endTurnButton.gameObject.SetActive(TurnSystem.Instance.IsPlayerTurn());
     }
 }
