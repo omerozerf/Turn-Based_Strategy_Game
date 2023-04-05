@@ -51,5 +51,13 @@ namespace _Scripts.Grid
         {
             return unitList.Count > 0;
         }
+
+
+        public Unit.Unit GetUnit()
+        {
+            if (HasAnyUnit()) return unitList[0];
+            
+            else return null;
+        }
     }
 }

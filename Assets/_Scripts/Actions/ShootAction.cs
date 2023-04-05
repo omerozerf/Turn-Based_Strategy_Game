@@ -2,11 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using _Scripts.Grid;
+using _Scripts.Unit;
 using UnityEngine;
 
 public class ShootAction : BaseAction
 {
     private float totalSpinAmount;
+    private int maxShootDistance = 7;
 
 
     private void Update()
@@ -43,11 +45,40 @@ public class ShootAction : BaseAction
     
     public override List<GridPosition> GetValidActionGridPositionList()
     {
+        List<GridPosition> validGridPositionList = new List<GridPosition>();
+
         GridPosition unitGridPosition = unit.GetGridPosition();
 
-        return new List<GridPosition>
+        for (int x = -maxShootDistance; x <= maxShootDistance; x++)
         {
-            unitGridPosition
-        };
+            for (int z = -maxShootDistance; z <= maxShootDistance; z++)
+            {
+                GridPosition offsetGridPosition = new GridPosition(x, z);
+                GridPosition testGridPosition = unitGridPosition + offsetGridPosition;
+
+                if (!LevelGrid.Instance.IsValidGridPosition(testGridPosition))
+                {
+                    continue;
+                }
+
+                if (!LevelGrid.Instance.HasAnyUnitOnGridPosition(testGridPosition))  
+                {
+                    // Grid position is empty, no Unit
+                    continue;
+                }
+
+                Unit targetUnit = LevelGrid.Instance.GetUnitAtGridPosition(testGridPosition);
+
+                if (targetUnit.IsEnemy() == unit.IsEnemy())
+                {
+                    // Both Units on same "team"
+                    continue;
+                }
+                    
+                validGridPositionList.Add(testGridPosition);
+            }
+        }
+            
+        return validGridPositionList;
     }
 }

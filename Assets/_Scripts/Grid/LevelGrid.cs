@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using _Scripts.Unit;
 
 namespace _Scripts.Grid
 {
@@ -78,6 +79,13 @@ namespace _Scripts.Grid
         {
             GridObject gridObject = gridSystem.GetGridObject(gridPosition);
             return gridObject.HasAnyUnit();
+        }
+        
+        
+        public Unit.Unit GetUnitAtGridPosition(GridPosition gridPosition)
+        {
+            GridObject gridObject = gridSystem.GetGridObject(gridPosition);
+            return gridObject.GetUnit();
         }
     }
 }
