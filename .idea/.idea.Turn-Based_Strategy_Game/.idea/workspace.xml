@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="815c1873-85e9-4457-b191-934b287c8798" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Turn-Based_Strategy_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Turn-Based_Strategy_Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/UI/TurnSystemUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/UI/TurnSystemUI.cs" afterDir="false" />
-    </list>
+    <list default="true" id="815c1873-85e9-4457-b191-934b287c8798" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +10,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Actions/BaseAction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/EnemyAI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Grid/LevelGrid.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/MouseWorld.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Testing.cs" root0="FORCE_HIGHLIGHTING" />
@@ -118,7 +116,7 @@
       <workItem from="1680529079268" duration="2884000" />
       <workItem from="1680594806984" duration="587000" />
       <workItem from="1680607892950" duration="10544000" />
-      <workItem from="1680685378311" duration="6998000" />
+      <workItem from="1680685378311" duration="7306000" />
     </task>
     <servers />
   </component>
