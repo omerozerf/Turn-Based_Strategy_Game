@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 17038874}
   m_Layer: 0
-  m_Name: --------------------
+  m_Name: -----------------------------
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -235,7 +235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 251129098}
   m_Layer: 0
-  m_Name: --------------------
+  m_Name: -----------------------------
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -781,7 +781,7 @@ GameObject:
   m_Component:
   - component: {fileID: 440140741}
   m_Layer: 0
-  m_Name: -------------------- (3)
+  m_Name: -----------------------------
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -812,7 +812,7 @@ GameObject:
   m_Component:
   - component: {fileID: 448846026}
   m_Layer: 0
-  m_Name: '-------------------- '
+  m_Name: -----------------------------
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -843,7 +843,7 @@ GameObject:
   m_Component:
   - component: {fileID: 526546043}
   m_Layer: 0
-  m_Name: -------------------- (2)
+  m_Name: -----------------------------
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -909,7 +909,7 @@ GameObject:
   m_Component:
   - component: {fileID: 588164157}
   m_Layer: 0
-  m_Name: --------------------  (2)
+  m_Name: -----------------------------
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -940,7 +940,7 @@ GameObject:
   m_Component:
   - component: {fileID: 626201844}
   m_Layer: 0
-  m_Name: -------------------- (1)
+  m_Name: -----------------------------
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -961,6 +961,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &659245330
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6553263902737323766, guid: 9833756a6ff8dff4a88ace044e1da97d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553263902737323766, guid: 9833756a6ff8dff4a88ace044e1da97d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553263902737323766, guid: 9833756a6ff8dff4a88ace044e1da97d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553263902737323766, guid: 9833756a6ff8dff4a88ace044e1da97d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553263902737323766, guid: 9833756a6ff8dff4a88ace044e1da97d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553263902737323766, guid: 9833756a6ff8dff4a88ace044e1da97d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553263902737323766, guid: 9833756a6ff8dff4a88ace044e1da97d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553263902737323766, guid: 9833756a6ff8dff4a88ace044e1da97d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553263902737323766, guid: 9833756a6ff8dff4a88ace044e1da97d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553263902737323766, guid: 9833756a6ff8dff4a88ace044e1da97d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553263902737323766, guid: 9833756a6ff8dff4a88ace044e1da97d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553263902737323769, guid: 9833756a6ff8dff4a88ace044e1da97d,
+        type: 3}
+      propertyPath: m_Name
+      value: Unit Enemy
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9833756a6ff8dff4a88ace044e1da97d, type: 3}
 --- !u!1 &675514578
 GameObject:
   m_ObjectHideFlags: 0
@@ -971,7 +1040,7 @@ GameObject:
   m_Component:
   - component: {fileID: 675514579}
   m_Layer: 0
-  m_Name: '-------------------- '
+  m_Name: -----------------------------
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1002,7 +1071,7 @@ GameObject:
   m_Component:
   - component: {fileID: 731683634}
   m_Layer: 0
-  m_Name: --------------------
+  m_Name: -----------------------------
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1620,7 +1689,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1069667742}
   m_Layer: 0
-  m_Name: --------------------
+  m_Name: -----------------------------
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2827,7 +2896,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1924042284}
   m_Layer: 0
-  m_Name: --------------------  (1)
+  m_Name: -----------------------------
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2858,7 +2927,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2024899173}
   m_Layer: 0
-  m_Name: -------------------- (4)
+  m_Name: --------------------------
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3207,6 +3276,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Unit
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420451892989349183, guid: b4fd4591f6d7ca5478c0e2f38871d1b1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4fd4591f6d7ca5478c0e2f38871d1b1, type: 3}

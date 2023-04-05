@@ -7,6 +7,10 @@ namespace _Scripts.Unit
     public class Unit : MonoBehaviour
     {
         public static event EventHandler OnAnyActionPointsChanged;
+
+
+        [SerializeField] private bool isEnemy;
+        
         
         
         private const int ACTION_POINTS_MAX = 2;
@@ -35,11 +39,16 @@ namespace _Scripts.Unit
             TurnSystem.Instance.OnTurnChanged += TurnSystem_OnTurnChanged;
         }
 
+        
         private void TurnSystem_OnTurnChanged(object sender, EventArgs e)
         {
-            actionPoints = ACTION_POINTS_MAX;
+            if (( IsEnemy() && !TurnSystem.Instance.IsPlayerTurn()) ||
+                (!IsEnemy() && TurnSystem.Instance.IsPlayerTurn()))
+            {
+                actionPoints = ACTION_POINTS_MAX;
             
-            OnAnyActionPointsChanged?.Invoke(this, EventArgs.Empty);
+                OnAnyActionPointsChanged?.Invoke(this, EventArgs.Empty);
+            }
         }
 
 
@@ -112,6 +121,12 @@ namespace _Scripts.Unit
         public int GetActionPoints()
         {
             return actionPoints;
+        }
+
+
+        public bool IsEnemy()
+        {
+            return isEnemy;
         }
     }
 }

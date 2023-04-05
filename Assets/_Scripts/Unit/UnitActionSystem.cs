@@ -14,12 +14,12 @@ namespace _Scripts.Unit
         public event EventHandler OnSelectedActionChanged;
         public event EventHandler<bool> OnBusyChanged;
         public event EventHandler OnActionStarted;
-
-
+        
 
         [SerializeField] private Unit selectedUnit;
         [SerializeField] private LayerMask unitsLayerMask;
 
+        
         private BaseAction selectedAction;
         private bool isBusy;
         
@@ -44,15 +44,12 @@ namespace _Scripts.Unit
 
         private void Update()
         {
-            if (isBusy)
-            {
-                return;
-            }
+            if (isBusy) return;
 
-            if (EventSystem.current.IsPointerOverGameObject())
-            {
-                return;
-            }
+            if (!TurnSystem.Instance.IsPlayerTurn()) return;
+            
+            if (EventSystem.current.IsPointerOverGameObject()) return;
+            
             if (TryHandleUnitSelection()) return;
             
             
@@ -113,6 +110,15 @@ namespace _Scripts.Unit
                             // Unit is already selected
                             return false;
                         }
+
+
+                        if (unit.IsEnemy())
+                        {
+                            // Clicked on a enemy
+                            return false;
+                        }
+                        
+                        
                         SetSelectedUnit(unit);
                         return true;
                     }
