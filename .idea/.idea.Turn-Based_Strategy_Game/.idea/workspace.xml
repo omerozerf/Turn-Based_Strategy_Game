@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="815c1873-85e9-4457-b191-934b287c8798" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/EnemyAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/EnemyAI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Prefabs/Unit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Prefabs/Unit.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,6 +11,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Actions/BaseAction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Actions/ShootAction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/EnemyAI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Grid/LevelGrid.cs" root0="FORCE_HIGHLIGHTING" />
@@ -118,7 +119,7 @@
       <workItem from="1680529079268" duration="2884000" />
       <workItem from="1680594806984" duration="587000" />
       <workItem from="1680607892950" duration="10544000" />
-      <workItem from="1680685378311" duration="7630000" />
+      <workItem from="1680685378311" duration="8018000" />
     </task>
     <servers />
   </component>
