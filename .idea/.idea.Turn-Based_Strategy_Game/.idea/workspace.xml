@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="815c1873-85e9-4457-b191-934b287c8798" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Turn-Based_Strategy_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Turn-Based_Strategy_Game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Actions/BaseAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Actions/BaseAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Actions/MoveAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Actions/MoveAction.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Actions/ShootAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Actions/ShootAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Grid/GridObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Grid/GridObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Grid/LevelGrid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Grid/LevelGrid.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Unit/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Unit/Unit.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +123,7 @@
       <workItem from="1680529079268" duration="2884000" />
       <workItem from="1680594806984" duration="587000" />
       <workItem from="1680607892950" duration="10544000" />
-      <workItem from="1680685378311" duration="9268000" />
+      <workItem from="1680685378311" duration="14636000" />
     </task>
     <servers />
   </component>

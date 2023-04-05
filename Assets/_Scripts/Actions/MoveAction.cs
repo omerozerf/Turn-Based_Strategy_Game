@@ -39,8 +39,7 @@ namespace _Scripts
             else
             {
                 unitAnimator.SetBool("IsWalking", false);
-                isActive = false;
-                onActionComplete();
+                ActionComplete();
             }
             
             
@@ -51,9 +50,9 @@ namespace _Scripts
 
         public override void TakeAction(GridPosition gridPosition, Action onActionComplete)
         {
-            this.onActionComplete = onActionComplete;
+            ActionStart(onActionComplete);
+            
             this.targetPosition = LevelGrid.Instance.GetWorldPosition(gridPosition);
-            isActive = true;
         }
         
         

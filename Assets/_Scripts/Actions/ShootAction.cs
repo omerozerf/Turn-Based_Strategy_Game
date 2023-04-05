@@ -7,9 +7,18 @@ using UnityEngine;
 
 public class ShootAction : BaseAction
 {
-    private float totalSpinAmount;
-    private int maxShootDistance = 7;
+    private enum State
+    {
+        Aiming,
+        Shooting,
+        CoolOff,
+    }
 
+    private int maxShootDistance = 7;
+    private State state;
+    private float stateTimer;
+    private Unit targerUnit;
+    private bool canShootBullet;
 
     private void Update()
     {
@@ -17,14 +26,74 @@ public class ShootAction : BaseAction
         {
             return;
         }
-        float spinAddAmount = 360f * Time.deltaTime;
-        transform.eulerAngles += new Vector3(0, spinAddAmount, 0);
 
-        totalSpinAmount += spinAddAmount;
-        if (totalSpinAmount >= 360f)
+        stateTimer -= Time.deltaTime;
+
+
+        switch (state)
         {
-            isActive = false;
-            onActionComplete();
+            case State.Aiming:
+                Vector3 aimDirection = (targerUnit.GetWorldPosition() - unit.GetWorldPosition()).normalized;
+                float rotateSpeed = 10f;
+                transform.forward = Vector3.Lerp(transform.forward, aimDirection, rotateSpeed * Time.deltaTime);
+                break;
+            
+            case State.Shooting:
+                if (canShootBullet)
+                {
+                    Shoot();
+                    canShootBullet = false;
+                }
+                break;
+            
+            case State.CoolOff:
+                break;
+        }
+        
+        
+        if (stateTimer <= 0f)
+        {
+            NextState();
+        }
+        
+    }
+
+    private void Shoot()
+    {
+        targerUnit.Damage();
+    }
+
+
+    private void NextState()
+    {
+        switch (state)
+        {
+            case State.Aiming:
+                if (stateTimer <= 0f)
+                {
+                    state = State.Shooting;
+                    float shootingStateTime = 0.1f;
+                    stateTimer = shootingStateTime;
+                }
+                break;
+            
+            
+            case State.Shooting:
+                if (stateTimer <= 0f)
+                {
+                    state = State.CoolOff;
+                    float coolOffStateTime = 0.1f;
+                    stateTimer = coolOffStateTime;
+                }
+                break;
+            
+            
+            case State.CoolOff:
+                if (stateTimer <= 0f)
+                {
+                    ActionComplete();
+                }
+                break;
         }
     }
     
@@ -37,9 +106,15 @@ public class ShootAction : BaseAction
     
     public override void TakeAction(GridPosition gridPosition, Action onActionComplete)
     {
-        this.onActionComplete = onActionComplete;
-        isActive = true;
-        totalSpinAmount = 0f;
+        ActionStart(onActionComplete);
+
+        targerUnit = LevelGrid.Instance.GetUnitAtGridPosition(gridPosition);
+
+        state = State.Aiming;
+        float aimingStateTime = 1f;
+        stateTimer = aimingStateTime;
+
+        canShootBullet = true;
     }
 
     
@@ -57,6 +132,12 @@ public class ShootAction : BaseAction
                 GridPosition testGridPosition = unitGridPosition + offsetGridPosition;
 
                 if (!LevelGrid.Instance.IsValidGridPosition(testGridPosition))
+                {
+                    continue;
+                }
+
+                int testDistance = Mathf.Abs(x) + Mathf.Abs(z);
+                if (testDistance > maxShootDistance)
                 {
                     continue;
                 }
