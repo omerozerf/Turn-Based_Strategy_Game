@@ -11,10 +11,10 @@ TagManager:
   - 
   - Water
   - UI
-  - MousePlane
-  - Units
-  - 
-  - 
+  - Ground
+  - Unit
+  - Static Obstacles
+  - Interactable
   - 
   - 
   - 
